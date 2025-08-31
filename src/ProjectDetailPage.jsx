@@ -1,5 +1,53 @@
 import { Link, useNavigate, useParams } from "react-router-dom";
 
+const LINKS = {
+  cyberRepo: "https://github.com/Jrgio29/Cybersecurity-Analytics",
+  warehouseRepo: "https://github.com/Jrgio29/ist722dbt/tree/Jrgio29-patch-1",
+};
+
+function RepoSection({ url, note }) {
+  return (
+    <section className="card-dark rounded-2xl p-8 space-y-4">
+      <h3 className="project-subheading">Code Repository</h3>
+
+      {url ? (
+        <a
+          href={url}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white hover:bg-slate-200 border border-white/20 text-slate-900 font-semibold w-max"
+        >
+          {/* GitHub icon */}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+            className="w-5 h-5 text-slate-900"
+          >
+            <path d="M12 .5A11.5 11.5 0 0 0 .5 12c0 5.08 3.29 9.38 
+                    7.86 10.9.58.1.79-.25.79-.56v-2.1c-3.2.7-3.87-1.34-3.87-1.34-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.71.08-.71
+                    1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.73 1.26 3.4.96.1-.76.41-1.26.75-1.55-2.55-.29-5.24-1.28-5.24-5.68
+                    0-1.25.45-2.27 1.2-3.07-.12-.29-.52-1.47.11-3.07 
+                    0 0 .98-.31 3.2 1.17a11.1 
+                    11.1 0 0 1 5.83 0c2.22-1.48 
+                    3.19-1.17 3.19-1.17.63 1.6.23 2.78.11 3.07.75.8 
+                    1.2 1.82 1.2 3.07 0 4.41-2.69 5.39-5.26 
+                    5.67.42.37.8 1.1.8 
+                    2.22v3.29c0 .31.21.67.8.56A11.51 
+                    11.51 0 0 0 23.5 12 
+                    11.5 11.5 0 0 0 12 .5z"/>
+          </svg>
+          View Code on GitHub
+        </a>
+      ) : (
+        <p className="project-text">
+          {note || "Repository available on request."}
+        </p>
+      )}
+    </section>
+  );
+}
+
 /** Small helpers */
 function Stat({ label, value }) {
   return (
@@ -100,6 +148,7 @@ function CybersecurityDetail() {
           <li>Add analyst-in-the-loop feedback to reduce false positives.</li>
         </ul>
       </Section>
+      <RepoSection url={LINKS.cyberRepo} />
     </>
   );
 }
@@ -185,9 +234,7 @@ function WarehouseDetail() {
         </ul>
       </Section>
 
-      <footer className="text-sm opacity-70">
-        Content synthesized from your course presentation deck. (Slides available on request.)
-      </footer>
+      <RepoSection url={LINKS.warehouseRepo} />
     </>
   );
 }

@@ -338,35 +338,28 @@ function ContactPage() {
 
 function Layout() {
   const linkBase =
-    "nav-link relative px-4 py-2 flex items-center transition-colors duration-200";
+    "nav-link relative px-2 py-2 flex items-center transition-colors duration-200";
   const active =
     "active text-indigo-300 after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-indigo-300";
 
   return (
     <div className="min-h-screen bg-slate-900 text-slate-100">
-      <header className="fixed top-0 inset-x-0 z-40 bg-slate-900/90 backdrop-blur supports-[backdrop-filter]:bg-slate-900/75 border-b border-white/10">
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          {/* Social icons (optional) */}
-          <div className="flex items-center gap-2 opacity-90">
-            <a href="https://www.linkedin.com/in/joseph-giovannelli/" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="icon-link">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="icon-svg"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zM8 8h3.8v2.2h.05c.53-1 1.83-2.2 3.76-2.2 4.02 0 4.77 2.65 4.77 6.1V24h-4v-7.1c0-1.7-.03-3.88-2.37-3.88-2.37 0-2.73 1.85-2.73 3.76V24h-4V8z"/></svg>
-            </a>
-            <a href="https://github.com/" target="_blank" rel="noreferrer" aria-label="GitHub" className="icon-link">
-              <svg viewBox="0 0 24 24" className="icon-svg" xmlns="http://www.w3.org/2000/svg"><path d="M12 .5A11.5 11.5 0 0 0 .5 12c0 5.08 3.29 9.38 7.86 10.9.58.1.79-.25.79-.56v-2.1c-3.2.7-3.87-1.34-3.87-1.34-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.73 1.26 3.4.96.1-.76.41-1.26.75-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.27 1.2-3.07-.12-.29-.52-1.47.11-3.07 0 0 .98-.31 3.2 1.17a11.1 11.1 0 0 1 5.83 0c2.22-1.48 3.19-1.17 3.19-1.17.63 1.6.23 2.78.11 3.07.75.8 1.2 1.82 1.2 3.07 0 4.41-2.69 5.39-5.26 5.67.42.37.8 1.1.8 2.22v3.29c0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg>
-            </a>
-          </div>
+      {/* Fixed header */}
+     <header className="fixed top-0 inset-x-0 z-40 bg-slate-900/90 backdrop-blur supports-[backdrop-filter]:bg-slate-900/75 border-b border-white/10">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center gap-8">
+        <div className="nav-links flex items-center gap-12 text-lg">
+          <NavLink to="/" className={({isActive}) => `${linkBase} ${isActive ? active : ''}`}>Home</NavLink>
+          <NavLink to="/about" className={({isActive}) => `${linkBase} ${isActive ? active : ''}`}>About</NavLink>
+          <NavLink to="/projects" className={({isActive}) => `${linkBase} ${isActive ? active : ''}`}>Projects</NavLink>
+          <NavLink to="/contact" className={({isActive}) => `${linkBase} ${isActive ? active : ''}`}>Contact</NavLink>
+        </div>
+      </nav>
+    </header>
 
-          {/* Nav links — always visible */}
-          <div className="nav-links flex items-center gap-12 text-xl">
-            <NavLink to="/" className={({isActive}) => `${linkBase} ${isActive ? active : ''}`}>Home</NavLink>
-            <NavLink to="/about" className={({isActive}) => `${linkBase} ${isActive ? active : ''}`}>About</NavLink>
-            <NavLink to="/projects" className={({isActive}) => `${linkBase} ${isActive ? active : ''}`}>Projects</NavLink>
-            <NavLink to="/contact" className={({isActive}) => `${linkBase} ${isActive ? active : ''}`}>Contact</NavLink>
-          </div>
-        </nav>
-      </header>
+      {/* Spacer so content doesn't sit under the fixed header */}
+      <div className="header-spacer" />
 
-      <div className="pt-24 min-h-screen">
+      <div className="min-h-screen">
         <Outlet />
       </div>
     </div>

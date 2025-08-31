@@ -1,3 +1,9 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #0f172a; /* same as your dark bg */
+}
+
 .icon-link { display:inline-flex; align-items:center; justify-content:center; padding:2px; border-radius:4px; }
 .icon-link:hover { background: rgba(255,255,255,0.1); }
 .icon-svg { width:16px !important; height:16px !important; display:inline-block; vertical-align:middle; }
@@ -13,7 +19,38 @@ h3 { margin-top: 32px; margin-bottom: 16px; }
 
 .scroll-pad { scroll-margin-top: 96px; }
 
-.hero { position: relative; height: 70vh; }
+.site-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 64px;                 /* 4rem */
+  background: #0f172a;          /* same dark as page */
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 2px 8px rgba(0,0,0,.35);
+  z-index: 1000;                /* above hero/content */
+}
+
+/* Inner header layout */
+.site-nav {
+  max-width: 1120px;            /* ~max-w-7xl */
+  margin: 0 auto;
+  height: 100%;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Left icons */
+.icon-strip { display: flex; align-items: center; gap: 8px; }
+
+/* Right links with spacing */
+.site-nav-links { display: flex; align-items: center; gap: 24px; }
+.site-nav-links .nav-link { font-size: 18px; }  /* readable */
+
+/* Space below fixed header so content doesn't hide underneath */
+.header-spacer { height: 96px; } /* header (64) + comfortable breathing room */
+
+.hero { position: relative; z-index: 0; }
 @media (min-width: 640px) { .hero { height: 80vh; } }
 .hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .hero::after { content: ""; position: absolute; inset: 0; background: rgba(15, 23, 42, 0.4); }
