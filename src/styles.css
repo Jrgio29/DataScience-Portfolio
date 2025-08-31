@@ -1,0 +1,245 @@
+.icon-link { display:inline-flex; align-items:center; justify-content:center; padding:2px; border-radius:4px; }
+.icon-link:hover { background: rgba(255,255,255,0.1); }
+.icon-svg { width:16px !important; height:16px !important; display:inline-block; vertical-align:middle; }
+
+.page-section { padding-top: 8rem; padding-bottom: 8rem; }
+
+h1 { margin-top: 24px; margin-bottom: 16px; line-height: 1.15; letter-spacing: -0.01em; }
+h2 { margin-top: 40px; margin-bottom: 24px; }
+h3 { margin-top: 32px; margin-bottom: 16px; }
+
+.section-padding { padding-block: 6rem; } 
+@media (min-width: 640px) { .section-padding { padding: 7rem 0; } }
+
+.scroll-pad { scroll-margin-top: 96px; }
+
+.hero { position: relative; height: 70vh; }
+@media (min-width: 640px) { .hero { height: 80vh; } }
+.hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.hero::after { content: ""; position: absolute; inset: 0; background: rgba(15, 23, 42, 0.4); }
+
+.nav-links { display: flex; gap: 2rem; align-items: center; }
+.icon-link { display: inline-flex; align-items: center; justify-content: center; padding: 2px; border-radius: 4px; }
+.icon-svg  { width: 16px !important; height: 16px !important; display: inline-block; vertical-align: middle; }
+
+.hero-overlay { position: absolute; inset: 0; background: rgba(2, 6, 23, 0.55); }
+
+.headline {
+  color: #fff;
+  font-weight: 800;
+  line-height: 1.1;
+  text-shadow: 0 2px 12px rgba(0,0,0,.55);
+  font-size: clamp(48px, 8vw, 96px);
+  margin-bottom: 2rem;
+}
+
+/* Uppercase kicker above the headline */
+.kicker {
+  color: #fff;
+  letter-spacing: 0.4em;
+  text-shadow: 0 2px 8px rgba(0,0,0,.5);
+  font-size: clamp(14px, 2vw, 22px);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+/* Navbar links — force readable colors & states */
+.nav-link,
+.nav-link:link,
+.nav-link:visited {
+  color: #fff !important;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.50rem;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: #a5b4fc; 
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+.nav-link.active,
+.nav-link[aria-current="page"] {
+  color: #c7d2fe !important;
+  font-weight: 700;
+  font-size: 1.50rem;
+}
+
+.nav-link.active {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 9999px;
+  padding-inline: 14px;
+  padding-block: 8px;
+}
+
+.page-dark {
+  background: radial-gradient(circle at top left, #0f172a, #020617);
+  color: #e2e8f0;
+  min-height: 100vh;
+}
+.card-dark {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #f1f5f9;
+}
+
+.section-heading { font-size: 2.75rem; font-weight: 700; color: #f8fafc; }
+.sub-heading     { font-size: 2rem;   font-weight: 600; color: #f8fafc; }
+
+.about-photo {
+  width: 290px;  
+  height: 290px;
+  border-radius: 9999px;
+  object-fit: cover;
+  object-position: top; 
+  display: block;
+  margin-inline: auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,.35);
+}
+
+.about-title {
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: 800;
+  color: #f8fafc;
+  margin-top: 0.75rem;
+}
+
+.about-lead {
+  font-size: clamp(22px, 2.2vw, 28px);
+  line-height: 1.6;
+  color: #e5e7eb;
+  margin-top: 1rem;
+}
+
+.about-subheading {
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 700;
+  color: #f8fafc;
+  margin-bottom: 1rem;
+}
+
+.about-text,
+.about-list li {
+  font-size: clamp(20px, 2vw, 24px);
+  line-height: 1.7;
+  color: #e2e8f0;
+}
+
+.project-title {
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: 800;
+  color: #f8fafc;
+  margin-top: 0.75rem;
+}
+
+.project-lead {
+  font-size: clamp(22px, 2.2vw, 28px);
+  line-height: 1.6;
+  color: #e5e7eb;
+  margin-top: 1rem;
+}
+
+.project-subheading {
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 700;
+  color: #f8fafc;
+  margin-bottom: 1rem;
+}
+
+.project-text,
+.project-list li {
+  font-size: clamp(20px, 2vw, 24px);
+  line-height: 1.7;
+  color: #e2e8f0;
+}
+
+/* make the education logos bigger to balance the smaller headshot (adjust if needed) */
+.edu-logo {
+  width: 232px;
+  height: 232px;
+  object-fit: contain;
+}
+
+.profile-pic {
+  object-position: center top 20%;
+}
+
+/* project card hover shadow */
+.project-card:hover img {
+  transform: scale(1.04);
+}
+
+/* nicer underline for links inside detail page */
+a[href^="http"] {
+  text-underline-offset: 4px;
+}
+
+/* uniform project thumbnails */
+.project-thumb {
+  width: 800px;
+  height: 800px; 
+  object-fit: contain;
+  border-radius: 12px;
+  display: block;
+  margin-inline: auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,.35);
+  background-color: #0f172a; 
+}
+
+.project-hero {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  border-radius: 16px;
+  object-fit: contain;
+  margin-inline: auto;
+  box-shadow: 0 4px 16px rgba(0,0,0,.45);
+}
+
+.project-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #f8fafc;
+  text-shadow: 0 2px 8px rgba(0,0,0,.6);
+}
+
+.contact-icons {
+  display: flex;
+  gap: 16px;
+  margin-top: 2rem;
+}
+
+.contact-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 9999px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  transition: background-color .2s ease, transform .15s ease, color .2s ease;
+}
+
+.contact-icons a:hover {
+  background: rgba(255,255,255,0.12);
+  transform: translateY(-1px);
+}
+
+.contact-icons svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* brand colors */
+.contact-email   { color: #f87171; }
+.contact-email:hover { color: #fca5a5; }
+
+.contact-linkedin { color: #38bdf8; }
+.contact-linkedin:hover { color: #7dd3fc; }
+
+.contact-github  { color: #e5e7eb; }
+.contact-github:hover { color: #cbd5e1; }
